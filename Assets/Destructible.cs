@@ -16,11 +16,11 @@ public class Destructible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (bulletCount == 0)
-        // {
-        //     Instantiate(bullet, transform.position - new Vector3(0, .5f, 0), Quaternion.identity);
-        //     bulletCount++;
-        // }
+        if (bulletCount == 0)
+        {
+            Instantiate(bullet, transform.position - new Vector3(0, .5f, 0), Quaternion.identity);
+            bulletCount++;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

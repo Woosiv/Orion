@@ -23,8 +23,9 @@ public class BallMove : MonoBehaviour
     {
         if (transform.position.y < -5) {
             Debug.Log("Oof ow I'm hurt");
-            if (player) 
-                Debug.Log(player.GetComponent<Player>().health--);
+            if (player) {
+                player.GetComponent<Player>().takeDamage(1);
+            }
             Destroy(gameObject);
         }
     }

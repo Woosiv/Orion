@@ -6,13 +6,13 @@ public class Player : MonoBehaviour
 {
     public float speed = 10000f;
     public Rigidbody2D self;
-    public float maxDist = 10f;
-    
+    public float maxVelocity = 10f;
+    public GameObject healthBar;
     // Start is called before the first frame update
-    public int health = 10;
+    public int health;
     void Start()
     {
-        health = 10;
+        health = 18;
     }
 
     // Update is called once per frame
@@ -31,14 +31,19 @@ public class Player : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         // Vector2 pos = transform.position;
-        Vector2 pos = new Vector2(0,0);
+        Vector2 newVel = new Vector2(0,0);
         // Vector2 sum = new Vector2(0,0);
-        pos.x += h * speed * Time.deltaTime;
-        pos.y += v * speed * Time.deltaTime;
+        newVel.x += h * speed * Time.deltaTime;
+        newVel.y += v * speed * Time.deltaTime;
         if (h == 0)
-            pos.x = 0f;
+            newVel.x = 0f;
         if (v == 0)
-            pos.y = 0f;
-        self.velocity = pos;
+            newVel.y = 0f;
+        self.velocity = newVel;
+    }
+
+    public void takeDamage(int damage) {
+        health -= damage;
+        healthBar.GetComponent<healthBar>().takeDamage(damage);
     }
 }
