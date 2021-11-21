@@ -35,7 +35,10 @@ public class Player : MonoBehaviour
         // Vector2 sum = new Vector2(0,0);
         pos.x += h * speed * Time.deltaTime;
         pos.y += v * speed * Time.deltaTime;
-
+        if (h == 0)
+            pos.x = 0f;
+        if (v == 0)
+            pos.y = 0f;
         self.velocity = pos;
     }
 }
