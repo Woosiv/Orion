@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     public Collider2D self;
     public GameObject player;
     public float velocity = 3f;
+    public Sprite playerProjectile;
     void Start()
     {
         rb.velocity = new Vector2(0, -10); 
@@ -35,6 +36,11 @@ public class Ball : MonoBehaviour
     
     void FixedUpdate() {
         rb.velocity = rb.velocity.normalized * velocity;
+        float movX = rb.velocity.x;
+        float movY = rb.velocity.y;
+        // float alfa = Mathf.Acos(movX / Mathf.Sqrt((movX * movX) + (movY * movY)));
+        float alfa = Mathf.Atan(movX/movY);
+        rb.rotation = alfa * Mathf.Deg2Rad;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -48,6 +54,7 @@ public class Ball : MonoBehaviour
                 rb.velocity = new Vector2(Math.Abs(rb.velocity.x), rb.velocity.y); 
             gameObject.tag = "Projectile";
             gameObject.layer = 10;
+            gameObject.GetComponent<SpriteRenderer>().sprite = playerProjectile;
         }
     }
 }

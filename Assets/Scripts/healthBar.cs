@@ -7,8 +7,9 @@ public class healthBar : MonoBehaviour
     // Start is called before the first frame update
     private List<GameObject> stars = new List<GameObject>();
     public GameObject starPrefab;
+    public Sprite test;
     public int currHealth;
-    public int maxHealth;
+    // public int maxHealth;
 
     void Start() {
     }
@@ -33,7 +34,8 @@ public class healthBar : MonoBehaviour
         Debug.Log(currHealth);
         Debug.Log(stars.Count);
         for (int i = currHealth-1; i > currHealth-1-damage; i--) {
-            stars[i].GetComponent<Image>().color = new Color32(0,0,0,255);
+            // stars[i].GetComponent<Image>().color = new Color32(0,0,0,255);
+            stars[i].GetComponent<Image>().sprite = test;
             // Debug.Log("setting new color");
         }
         currHealth -= damage;

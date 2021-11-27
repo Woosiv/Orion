@@ -40,8 +40,9 @@ public class EnemyPlaceholder : MonoBehaviour
         healthBar.GetComponent<healthBar>().takeDamage(damage);
     }
 
-    // void OnCollisionEnter2D(Collision2D collision) {
-    //     Debug.Log("How?");
-    //     Debug.Log(collision.collider.gameObject.layer);
-    // }
+    void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.collider.gameObject.name.Contains("t Border")){
+            gameObject.GetComponent<SpriteRenderer>().flipX = !gameObject.GetComponent<SpriteRenderer>().flipX;
+        }
+    }
 }
