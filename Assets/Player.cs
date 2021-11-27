@@ -32,8 +32,7 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector2(leftScreenEdge, transform.position.y);
         }
-
-        if (transform.position.x > rightScreenEdge)
+        else if (transform.position.x > rightScreenEdge)
         {
             transform.position = new Vector2(rightScreenEdge, transform.position.y);
         }
@@ -45,13 +44,13 @@ public class Player : MonoBehaviour
         }
 
         // Make sure player can't leave the bottom portion of the screen
-        if (transform.position.y < botScreenEdge)
+        else if (transform.position.y < botScreenEdge)
         {
             transform.position = new Vector2(transform.position.x, botScreenEdge);
         }
         // transform.position = Vector2.MoveTowards(transform.position, pos, maxDist);
     }
-
+    
     void FixedUpdate() {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");

@@ -125,3 +125,4 @@ MonoBehaviour:
   hitCount: 1
   bulletCount: 0
   bullet: {fileID: 56728291251601379, guid: 2a5f8d8fe3a294a45ae17b22eba23a8a, type: 3}
+  attack: 0
