@@ -28,7 +28,7 @@ public class Destructible : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Projectile") {
             hitCount--;
-            // Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
             if (hitCount == 0) { 
                 GameObject.Find("Enemy").GetComponent<EnemyPlaceholder>().takeDamage(1);
                 Destroy(gameObject);

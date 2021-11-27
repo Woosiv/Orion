@@ -13,8 +13,9 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rb.velocity = new Vector2(0, -10); 
-        // Physics2D.IgnoreCollision(self, player);
         Physics2D.IgnoreLayerCollision(6, 7);
+        Physics2D.IgnoreLayerCollision(6, 6);
+        Physics2D.IgnoreLayerCollision(6, 8);
         player = GameObject.FindWithTag("Player");
     }
 
@@ -46,6 +47,7 @@ public class Ball : MonoBehaviour
             else 
                 rb.velocity = new Vector2(Math.Abs(rb.velocity.x), rb.velocity.y); 
             gameObject.tag = "Projectile";
+            gameObject.layer = 10;
         }
     }
 }

@@ -9,15 +9,17 @@ public class Player : MonoBehaviour
     public float maxVelocity = 10f;
     public GameObject healthBar;
     public int health;
-    public int leftScreenEdge = -5;
-    public int rightScreenEdge = 5;
-    public int botScreenEdge = -5;
-    public int topBoundary = -3;
 
     // Start is called before the first frame update
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(10, 7);
+        Physics2D.IgnoreLayerCollision(10, 9);
+        Physics2D.IgnoreLayerCollision(10, 6);
         health = 18;
+        healthBar = GameObject.FindGameObjectsWithTag("PlayerHealth")[0];
+        healthBar.GetComponent<healthBar>().currHealth = health;
+        healthBar.GetComponent<healthBar>().setUp();
     }
 
     // Update is called once per frame

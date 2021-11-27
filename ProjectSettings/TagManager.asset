@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Projectile
   - EnemyProjectile
+  - Blocks
+  - Enemy
+  - EnemyHealth
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - Boundary
   - Blocks
   - Enemy
-  - 
+  - PlayerProjectile
   - 
   - 
   - 
