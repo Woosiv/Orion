@@ -28,27 +28,6 @@ public class Player : MonoBehaviour
             // Debug.Log(player.health);
             Destroy(gameObject);
         }
-        // if (transform.position.x < leftScreenEdge)
-        // {
-        //     transform.position = new Vector2(leftScreenEdge, transform.position.y);
-        // }
-        // else if (transform.position.x > rightScreenEdge)
-        // {
-        //     transform.position = new Vector2(rightScreenEdge, transform.position.y);
-        // }
-
-        // // Make sure player can't leave the top boundary
-        // if (transform.position.y > topBoundary)
-        // {
-        //     transform.position = new Vector2(transform.position.x, topBoundary);
-        // }
-
-        // // Make sure player can't leave the bottom portion of the screen
-        // else if (transform.position.y < botScreenEdge)
-        // {
-        //     transform.position = new Vector2(transform.position.x, botScreenEdge);
-        // }
-        // transform.position = Vector2.MoveTowards(transform.position, pos, maxDist);
     }
     
     void FixedUpdate() {
