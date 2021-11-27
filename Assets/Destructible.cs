@@ -29,7 +29,7 @@ public class Destructible : MonoBehaviour
         if (collision.gameObject.tag == "Projectile") {
             hitCount--;
             Debug.Log("im here");
-            Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
             if (hitCount == 0) 
                 Destroy(gameObject);
 

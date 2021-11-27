@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BallMove : MonoBehaviour
+public class Ball : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody2D rb;
