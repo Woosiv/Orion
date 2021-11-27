@@ -8,8 +8,13 @@ public class Player : MonoBehaviour
     public Rigidbody2D self;
     public float maxVelocity = 10f;
     public GameObject healthBar;
-    // Start is called before the first frame update
     public int health;
+    public int leftScreenEdge = -5;
+    public int rightScreenEdge = 5;
+    public int botScreenEdge = -5;
+    public int topBoundary = -3;
+
+    // Start is called before the first frame update
     void Start()
     {
         health = 18;
