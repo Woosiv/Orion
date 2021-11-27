@@ -12,9 +12,9 @@ public class EnemyPlaceholder : MonoBehaviour
         
         // Debug.Log(Physics2D.GetIgnoreLayerCollision(8,8));
         self = gameObject.GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(8, 8);
-        Physics2D.IgnoreLayerCollision(6, 6);
-        self.velocity = new Vector2(-1f, .45f).normalized * velocity;
+        Physics2D.IgnoreLayerCollision(8, 9);
+        Physics2D.IgnoreLayerCollision(6, 9);
+        self.velocity = new Vector2(-1f, .35f).normalized * velocity;
         
     }
 
@@ -22,5 +22,10 @@ public class EnemyPlaceholder : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("How?");
+        Debug.Log(collision.collider.gameObject.layer);
     }
 }
