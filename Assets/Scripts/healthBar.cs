@@ -20,17 +20,14 @@ public class healthBar : MonoBehaviour
         for (int i = 0; i < currHealth; i++) {
             GameObject newStar = Instantiate(starPrefab, transform);
             stars.Add(newStar);
-            Debug.Log(newStar.GetComponent<Image>().color);
         }
-        Debug.Log("finished adding stars?");
-        Debug.Log(stars.Count);
     }
 
     public void takeDamage(int damage) {
         Debug.Log(stars.Count);
         for (int i = currHealth-1; i > currHealth-1-damage; i--) {
             stars[i].GetComponent<Image>().color = new Color32(0,0,0,255);
-            Debug.Log("setting new color");
+            // Debug.Log("setting new color");
         }
         currHealth -= damage;
     }

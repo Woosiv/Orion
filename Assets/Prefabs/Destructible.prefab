@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 732968375952119501}
   - component: {fileID: 732968375952119500}
   - component: {fileID: 732968375952119503}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,3 +126,4 @@ MonoBehaviour:
   bulletCount: 0
   bullet: {fileID: 56728291251601379, guid: 2a5f8d8fe3a294a45ae17b22eba23a8a, type: 3}
   attack: 0
+  currBullet: {fileID: 0}

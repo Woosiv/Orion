@@ -8,6 +8,7 @@ public class Destructible : MonoBehaviour
     public int bulletCount = 0;
     public GameObject bullet;
     public bool attack;
+    public GameObject currBullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,19 +18,16 @@ public class Destructible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attack && bulletCount == 0)
+        if (attack && currBullet == null)
         {
-            Instantiate(bullet, transform.position - new Vector3(0, .5f, 0), Quaternion.identity);
+            currBullet = Instantiate(bullet, transform.position - new Vector3(0, .5f, 0), Quaternion.identity);
             bulletCount++;
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("hoi");
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Projectile") {
             hitCount--;
-            Debug.Log("im here");
             // Destroy(collision.gameObject);
             if (hitCount == 0) 
                 Destroy(gameObject);

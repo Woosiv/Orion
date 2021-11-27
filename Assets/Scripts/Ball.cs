@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
     {
         rb.velocity = new Vector2(0, -10); 
         // Physics2D.IgnoreCollision(self, player);
-        Physics2D.IgnoreLayerCollision(6, 6);
+        Physics2D.IgnoreLayerCollision(6, 7);
         player = GameObject.FindWithTag("Player");
     }
 
@@ -28,6 +28,8 @@ public class Ball : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        if (transform.position.y > 6) 
+            Destroy(gameObject);
     }
     
     void FixedUpdate() {
