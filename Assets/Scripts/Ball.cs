@@ -36,17 +36,21 @@ public class Ball : MonoBehaviour
     
     void FixedUpdate() {
         rb.velocity = rb.velocity.normalized * velocity;
-
         
         // Handles direction for the ball after physics interactions
         float movX = rb.velocity.x;
         float movY = rb.velocity.y;
         float theta;
-        if (movX != 0)
-            theta = Mathf.Tan(movY/-movX);
+        if (movX == 0 && movY < 0) {
+            theta = 3.14f * Mathf.Rad2Deg;
+        }
+        else if (movX != 0) {
+            theta = Mathf.Atan2(movY, movX) * Mathf.Rad2Deg;
+            theta += 270f;
+        }
         else
             theta = 0f;
-        rb.rotation = theta * Mathf.Rad2Deg;
+        rb.rotation = theta;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
