@@ -10,23 +10,14 @@ public class Loader : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    public void LoadLevel(String scene)
+    public void Start()
     {
-        // Debug.Log("Starts the loading");
-        // SceneManager.LoadScene("Loading");
-        // StartCoroutine(LoadLoading());
-        
-        // Debug.Log("Starts the level");
-        StartCoroutine(LoadAsynchronously(scene));
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    IEnumerator LoadEverything(String scene)
+    public void LoadLevel(String scene)
     {
-        Debug.Log("Starts the loading");
-        yield return StartCoroutine(LoadLoading());
-
-        Debug.Log("Starts loading the level");
-        yield return StartCoroutine(LoadAsynchronously(scene));
+        StartCoroutine(LoadAsynchronously(scene));
     }
 
     IEnumerator LoadLoading()
@@ -39,23 +30,24 @@ public class Loader : MonoBehaviour
 
         // Loads the loading screen
         SceneManager.LoadScene("Loading");
+
+        // transition.SetTrigger("End");
+
+        // yield return new WaitForSeconds(transitionTime);
     }
 
     IEnumerator LoadAsynchronously(String scene)
     {
-        Debug.Log("It reached here");
+        // StartCoroutine(LoadLoading());
+
         // Starts the animation
         transition.SetTrigger("Start");
 
-        Debug.Log(transitionTime);
         // Waits for the set transition time
         yield return new WaitForSeconds(transitionTime);
 
-        Debug.Log("Made it past yield");
         // Starts loading the next scene
         AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
-        Debug.Log(operation.isDone);
-        Debug.Log(operation.progress);
 
         // Waits for operation to complete
         while (!operation.isDone)
