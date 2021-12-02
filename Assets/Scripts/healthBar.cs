@@ -26,6 +26,13 @@ public class healthBar : MonoBehaviour
             stars.Add(newStar);
         }
         Debug.Log(stars.Count);
+
+        // Sets the actual health of the player after generating containers
+        for (int i = currHealth - 1; i > currHealth-1-(currHealth-health.hp); i--)
+        {
+            stars[i].GetComponent<Image>().sprite = test;
+        }
+        currHealth = health.hp;
     }
 
     public void takeDamage(int damage) {
