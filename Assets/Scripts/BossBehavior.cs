@@ -37,13 +37,14 @@ public class BossBehavior : MonoBehaviour
         Debug.Log("Hello");
         while (currHealth > 0) {
             Debug.Log("Hey");
-            yield return BeamAttack(.1f);
+            yield return BeamAttack(.15f);
             yield return new WaitForSeconds(5f);
         }
     }
 
     IEnumerator BeamAttack(float seconds) {
         Debug.Log("Starting Beam Attack");
+        velocity /= 2;
         for (int i = 0; i < 7; i++) {
             // Debug.Log("creating a bullet");
             GameObject temp = Instantiate(bullet, new Vector2(transform.position.x + .5f, transform.position.y - 1.5f), Quaternion.identity);
@@ -54,7 +55,12 @@ public class BossBehavior : MonoBehaviour
             // Debug.Log(temp.GetComponent<Ball>().rb.velocity);
             yield return new WaitForSeconds(seconds);
         }
+        velocity *= 2;
     }
+
+    // IEnumerator FoamAttack(float seconds) {
+
+    // }
 
     // void OnCollisionEnter2D(Collision2D collision) {
     //     Debug.Log(collision.gameObject.tag);
