@@ -6,6 +6,7 @@ public class BossBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject bullet;
+    public Rigidbody2D self;
     public int moves = 1;
     public float velocity = 3f;
     private System.Action[] test;
@@ -14,7 +15,7 @@ public class BossBehavior : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(0f, 2f, -1f);
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1f, .5f).normalized * 3f;
+        self.velocity = new Vector2(-1f, .5f).normalized * 3f;
         currHealth = 10;
         StartCoroutine(AttackPatterns());
         
@@ -23,45 +24,96 @@ public class BossBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moves > 0) {
-            moves--;
-            // StartCoroutine(BeamAttack(.25f));
-        }
+        // if (moves > 0) {
+        //     moves--;
+        //     // StartCoroutine(BeamAttack(.25f));
+        // }
     }
 
     void FixedUpdate() {
-        gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.normalized * velocity;
+        if (Mathf.Round(self.velocity.y) == 0) {
+            self.velocity = new Vector2(self.velocity.x, 1f);
+        }
+        if (Mathf.Round(self.velocity.x) == 0) {
+            self.velocity = new Vector2(1, self.velocity.y);
+        }
+        self.velocity = self.velocity.normalized * velocity;
     }
 
     IEnumerator AttackPatterns() {
-        Debug.Log("Hello");
+        // Debug.Log("Hello");
         while (currHealth > 0) {
-            Debug.Log("Hey");
-            yield return BeamAttack(.15f);
+            // Debug.Log("Hey");
+            int move = Random.Range(0, 3);
+            switch (move) {
+                case 0:
+                    yield return ClawAttack(.15f);
+                    break;
+                case 1:
+                    yield return FoamAttack(.25f);
+                    break;
+                case 2:
+                    yield return TailAttack(.1f);
+                    break;
+            }
             yield return new WaitForSeconds(5f);
         }
     }
 
-    IEnumerator BeamAttack(float seconds) {
+    IEnumerator ClawAttack(float seconds) {
         Debug.Log("Starting Beam Attack");
+        int claw = Random.Range(0, 2);
         velocity /= 2;
         for (int i = 0; i < 7; i++) {
             // Debug.Log("creating a bullet");
-            GameObject temp = Instantiate(bullet, new Vector2(transform.position.x + .5f, transform.position.y - 1.5f), Quaternion.identity);
-            Vector2 dir = Vector2.down + (Random.Range(0f, .4f)*Vector2.right);
-            Debug.Log(dir);
-            temp.GetComponent<Ball>().rb.velocity = dir;
-            // Debug.Log("Set the value of temp");
-            // Debug.Log(temp.GetComponent<Ball>().rb.velocity);
+            GameObject temp;
+            Vector2 dir = Vector2.right;
+            switch (claw) {
+                // Right Claw
+                case 0:
+                    temp = Instantiate(bullet, new Vector2(transform.position.x + .5f, transform.position.y - 1.5f), Quaternion.identity);
+                    dir = Vector2.down + (Random.Range(0f, .4f)*Vector2.right);
+                    temp.GetComponent<Ball>().rb.velocity = dir;
+                    break;
+                // Left Claw
+                case 1:
+                    temp = Instantiate(bullet, new Vector2(transform.position.x - .5f, transform.position.y - 1.5f), Quaternion.identity);
+                    dir = Vector2.down + (Random.Range(0f, .4f)*Vector2.left);
+                    temp.GetComponent<Ball>().rb.velocity = dir;
+                    break;
+            }
             yield return new WaitForSeconds(seconds);
         }
         velocity *= 2;
     }
 
-    // IEnumerator FoamAttack(float seconds) {
+    IEnumerator FoamAttack(float seconds) {
+        Debug.Log("Starting Foam Attack");
+        velocity /= 2.5f;
+        for (int i = 0; i < 7; i++) {
+            GameObject temp = Instantiate(bullet, new Vector2(transform.position.x, transform.position.y - 1f), Quaternion.identity);
+            Vector2 dir = Vector2.down + (Random.Range(-.25f, .25f)*Vector2.right);
+            temp.GetComponent<Ball>().rb.velocity = dir;
+            temp.GetComponent<Ball>().velocity *= .7f;
+            yield return new WaitForSeconds(seconds);
+        }
+        velocity *= 2.5f;
+    }
 
-    // }
-
+    IEnumerator TailAttack(float seconds){
+        Debug.Log("Starting Tail Attack");
+        Vector2 reference = self.velocity;
+        Vector2 dir = Vector2.down + (Random.Range(-.5f,.5f)*Vector2.right);
+        velocity = 0f;
+        for (int i = 0; i < 7; i++) {
+            GameObject temp = Instantiate(bullet, new Vector2(transform.position.x - .2f, transform.position.y + 1f), Quaternion.identity);
+            temp.GetComponent<Ball>().rb.velocity = dir;
+            // temp.GetComponent<Ball>().velocity *= .7f;
+            yield return new WaitForSeconds(seconds);
+        }
+        velocity = 3f;
+        self.velocity = reference;
+    }
     // void OnCollisionEnter2D(Collision2D collision) {
     //     Debug.Log(collision.gameObject.tag);
     // }
