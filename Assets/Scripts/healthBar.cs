@@ -15,8 +15,8 @@ public class healthBar : MonoBehaviour
     }
 
     public void setUp() {
-        Debug.Log("Setting up health");
-        Debug.Log(currHealth);
+        // Debug.Log("Setting up health");
+        // Debug.Log(currHealth);
         foreach (GameObject star in stars) {
             Destroy(star);
         }
@@ -25,7 +25,7 @@ public class healthBar : MonoBehaviour
             GameObject newStar = Instantiate(starPrefab, transform);
             stars.Add(newStar);
         }
-        Debug.Log(stars.Count);
+        // Debug.Log(stars.Count);
 
         // Sets the actual health of the player after generating containers
         for (int i = currHealth - 1; i > currHealth-1-(currHealth-health.hp); i--)
@@ -37,9 +37,9 @@ public class healthBar : MonoBehaviour
 
     public void takeDamage(int damage) {
         Debug.Log("Taking damage");
-        Debug.Log(damage);
-        Debug.Log(currHealth);
-        Debug.Log(stars.Count);
+        // Debug.Log(damage);
+        // Debug.Log(currHealth);
+        // Debug.Log(stars.Count);
         for (int i = currHealth-1; i > currHealth-1-damage; i--) {
             // stars[i].GetComponent<Image>().color = new Color32(0,0,0,255);
             stars[i].GetComponent<Image>().sprite = test;

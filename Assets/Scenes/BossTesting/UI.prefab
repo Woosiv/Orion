@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: dd6dcf67df0b14540ac2b91f7c8d134e, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1597569006335171847}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a336d1db159d6134dba30e9401672389, type: 2}
+  m_Material: {fileID: 6200000, guid: 2f7d22f05c9178f4ead4c88182793ece, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16b20a2ef290b034aad0d023b7a491fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3cfb308ed57d5d49bfdf589e2b8790f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -462,7 +462,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -482,7 +482,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1597569006552230302}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a336d1db159d6134dba30e9401672389, type: 2}
+  m_Material: {fileID: 6200000, guid: 2f7d22f05c9178f4ead4c88182793ece, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -612,8 +612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfdfcb230277cc4999ac615d3bd6ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starPrefab: {fileID: 7131955064734689691, guid: 4f14ce179b6dce344ab21148c3969d89, type: 3}
-  test: {fileID: 21300000, guid: 736e6aa0c465c034aae6c5cff26bb2e0, type: 3}
+  starPrefab: {fileID: 7131955064734689691, guid: 12faabc827dd6984886d050534fdf01b, type: 3}
+  test: {fileID: 21300000, guid: b8ae664a56e310746b938109ec695c0c, type: 3}
   currHealth: 9
 --- !u!1 &1597569007285807577
 GameObject:
@@ -687,7 +687,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -707,7 +707,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1597569007285807577}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a336d1db159d6134dba30e9401672389, type: 2}
+  m_Material: {fileID: 6200000, guid: 2f7d22f05c9178f4ead4c88182793ece, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -832,7 +832,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 0.8862745, g: 0.9843137, b: 0.99215686, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -916,7 +916,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: dd6dcf67df0b14540ac2b91f7c8d134e, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -936,7 +936,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1597569007622517572}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a336d1db159d6134dba30e9401672389, type: 2}
+  m_Material: {fileID: 6200000, guid: 2f7d22f05c9178f4ead4c88182793ece, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1066,8 +1066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfdfcb230277cc4999ac615d3bd6ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starPrefab: {fileID: 2812865654483663419, guid: 20864e48a0eeaf24686622c2dcabb692, type: 3}
-  test: {fileID: 21300000, guid: 736e6aa0c465c034aae6c5cff26bb2e0, type: 3}
+  starPrefab: {fileID: 2812865654483663419, guid: 7a60bc858d6f70241aecbd42001c86bb, type: 3}
+  test: {fileID: 21300000, guid: b8ae664a56e310746b938109ec695c0c, type: 3}
   currHealth: 18
 --- !u!1 &1597569008082806812
 GameObject:
@@ -1141,7 +1141,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1161,7 +1161,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1597569008082806812}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a336d1db159d6134dba30e9401672389, type: 2}
+  m_Material: {fileID: 6200000, guid: 2f7d22f05c9178f4ead4c88182793ece, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1249,7 +1249,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 0.88309896, g: 0.98207784, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1332,7 +1332,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 07e069b552ce07547ae699bb37e3cb26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1352,7 +1352,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1597569008231969978}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a336d1db159d6134dba30e9401672389, type: 2}
+  m_Material: {fileID: 6200000, guid: 2f7d22f05c9178f4ead4c88182793ece, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
