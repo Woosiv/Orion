@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         if (health <= 0) {
             Debug.Log("I'm dead :(");
             // Debug.Log(player.health);
+            FindObjectOfType<AudioManager>().Play("CharacterDeath");
             Destroy(gameObject);
         }
     }
