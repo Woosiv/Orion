@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBehavior : MonoBehaviour
+public class ScorpiusBossBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject bullet;
@@ -19,15 +19,6 @@ public class BossBehavior : MonoBehaviour
         currHealth = 10;
         StartCoroutine(AttackPatterns());
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // if (moves > 0) {
-        //     moves--;
-        //     // StartCoroutine(BeamAttack(.25f));
-        // }
     }
 
     void FixedUpdate() {
@@ -114,8 +105,4 @@ public class BossBehavior : MonoBehaviour
         velocity = 3f;
         self.velocity = reference;
     }
-    // void OnCollisionEnter2D(Collision2D collision) {
-    //     Debug.Log(collision.gameObject.tag);
-    // }
-    // IEnumerator 
 }
