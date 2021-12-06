@@ -13,10 +13,11 @@ public class Ball : MonoBehaviour
     public Sprite playerProjectile;
     void Start()
     {
-        rb.velocity = new Vector2(0, -10); 
+        // rb.velocity = new Vector2(0, -10); 
         Physics2D.IgnoreLayerCollision(6, 7);
         Physics2D.IgnoreLayerCollision(6, 6);
         Physics2D.IgnoreLayerCollision(6, 8);
+        Physics2D.IgnoreLayerCollision(6, 9);
         player = GameObject.FindWithTag("Player");
     }
 

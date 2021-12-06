@@ -31,6 +31,7 @@ public class EnemyPlaceholder : MonoBehaviour
         if (attack && currBullet == null)
         {
             currBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            currBullet.GetComponent<Ball>().rb.velocity = new Vector2(0, -10);
             // bulletCount++;
         }
     }

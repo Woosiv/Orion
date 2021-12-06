@@ -16,17 +16,13 @@ public class Loader : MonoBehaviour
         // SceneManager.LoadScene("Loading");
         // StartCoroutine(LoadLoading());
         
+        // Used to simulate health lost throughout multiple scenes
+        // Debug.Log("Current health is " + health.hp);
+        // health.hp -= 1;
+        // Debug.Log("Current health is now" + health.hp);
+
         // Debug.Log("Starts the level");
         StartCoroutine(LoadAsynchronously(scene));
-    }
-
-    IEnumerator LoadEverything(String scene)
-    {
-        Debug.Log("Starts the loading");
-        yield return StartCoroutine(LoadLoading());
-
-        Debug.Log("Starts loading the level");
-        yield return StartCoroutine(LoadAsynchronously(scene));
     }
 
     IEnumerator LoadLoading()
