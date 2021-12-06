@@ -22,6 +22,7 @@ public Animator animator;
     private Queue<string[]> sentences;
     void Start()
     {
+        Debug.Log("STARTUP FOR DM");
         sentences=new Queue<string[]>();
         StartDialogue(dialogue);
     }
@@ -49,8 +50,10 @@ public Animator animator;
 
     public void DisplayNextSentence()
     {
+        Debug.Log("displaying next sentence");
         if (sentences.Count==0)
         {
+            Debug.Log("ENDING DIALOGUE NO MORE SENTENCES LEFT");
             EndDialogue();
             return;
         }
