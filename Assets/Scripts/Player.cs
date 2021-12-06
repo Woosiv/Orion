@@ -10,9 +10,12 @@ public class Player : MonoBehaviour
     public GameObject healthBar;
     public int health;
 
+    public GameObject retryButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        retryButton.SetActive(false);
         Physics2D.IgnoreLayerCollision(10, 7);
         Physics2D.IgnoreLayerCollision(10, 9);
         Physics2D.IgnoreLayerCollision(10, 6);
@@ -29,6 +32,8 @@ public class Player : MonoBehaviour
             Debug.Log("I'm dead :(");
             // Debug.Log(player.health);
             Destroy(gameObject);
+            Time.timeScale=0;
+            retryButton.SetActive(true);
         }
     }
     

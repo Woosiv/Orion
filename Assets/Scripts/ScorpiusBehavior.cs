@@ -10,11 +10,14 @@ public class ScorpiusBehavior : MonoBehaviour
     public GameObject healthBar;
     public GameObject currBullet;
     public GameObject bullet;
+    public Dialogue dialogue;
     public bool attack;
     public GameObject bossForm;
+    public GameObject finalbutton;
     // Start is called before the first frame update
     void Start()
     {
+        finalbutton.SetActive(false);
         self = gameObject.GetComponent<Rigidbody2D>();
         healthBar = GameObject.FindGameObjectsWithTag("EnemyHealth")[0];
         Physics2D.IgnoreLayerCollision(8, 9);
@@ -31,7 +34,9 @@ public class ScorpiusBehavior : MonoBehaviour
     void Update()
     {
         if (currHealth == 0) {
-            bossForm.SetActive(true);
+            Debug.Log(currHealth);
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            //bossForm.SetActive(true);
             Destroy(gameObject);
         }
         // if (attack && currBullet == null)

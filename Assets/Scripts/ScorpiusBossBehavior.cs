@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScorpiusBossBehavior : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ScorpiusBossBehavior : MonoBehaviour
     private System.Action[] test;
     public int maxHealth;
     public int currHealth;
+    public Dialogue dialogue;
     public GameObject healthBar;
+    public GameObject finalbutton;
     void Start()
     {
         transform.position = new Vector3(0f, 2f, -1f);
@@ -27,7 +30,11 @@ public class ScorpiusBossBehavior : MonoBehaviour
 
     void FixedUpdate() {
         if (currHealth <= 0) 
+            {
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             Destroy(gameObject);
+            finalbutton.SetActive(true);
+            }
         if (Mathf.Round(self.velocity.y) == 0) {
             self.velocity = new Vector2(self.velocity.x, 1f);
         }

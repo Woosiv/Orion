@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scorpius.unity
     guid: e1a007ae1b058d14f848b23aab347df1
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: a833c59569a164a4f93ee9bb462d8f7c
   m_configObjects: {}
