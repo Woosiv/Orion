@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 223417425461638742}
   - component: {fileID: 223417425461638745}
   - component: {fileID: 223417425461638743}
+  - component: {fileID: 5848528698804741467}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -103,6 +104,7 @@ MonoBehaviour:
   currBullet: {fileID: 0}
   bullet: {fileID: 56728291251601379, guid: 2a5f8d8fe3a294a45ae17b22eba23a8a, type: 3}
   attack: 1
+  bossForm: {fileID: 0}
 --- !u!50 &223417425461638745
 Rigidbody2D:
   serializedVersion: 4
@@ -140,3 +142,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &5848528698804741467
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223417425461638740}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08b19794050092b498ca33f37b5aa2d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
