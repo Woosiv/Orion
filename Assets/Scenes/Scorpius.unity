@@ -256,6 +256,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.072
       objectReference: {fileID: 0}
+    - target: {fileID: 1597569007285807576, guid: 336597fe0181e9947b6bff43af99ca4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1597569007285807582, guid: 336597fe0181e9947b6bff43af99ca4b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -600,15 +604,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 223417425461638742, guid: c9b38ab8b9e8f674890beae2bda8b3e1, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Mid
+      value: It seems I underestimated you, Hunter of the Stars.
       objectReference: {fileID: 0}
     - target: {fileID: 223417425461638742, guid: c9b38ab8b9e8f674890beae2bda8b3e1, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Transition
+      value: If you stand in the way of my beloved, I will cut you down where you
+        stand!
       objectReference: {fileID: 0}
     - target: {fileID: 223417425461638742, guid: c9b38ab8b9e8f674890beae2bda8b3e1, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: Now
+      value: You shall feel the full power of my sting soon.
       objectReference: {fileID: 0}
     - target: {fileID: 223417425461638744, guid: c9b38ab8b9e8f674890beae2bda8b3e1, type: 3}
       propertyPath: m_FlipX
@@ -1030,6 +1035,7 @@ GameObject:
   - component: {fileID: 467147083}
   - component: {fileID: 467147082}
   - component: {fileID: 467147081}
+  - component: {fileID: 467147085}
   m_Layer: 5
   m_Name: retryButton
   m_TagString: Untagged
@@ -1054,8 +1060,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 75.8}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.0000085831, y: 80.45099}
+  m_SizeDelta: {x: 248.9034, y: 46.6694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467147081
 MonoBehaviour:
@@ -1125,6 +1131,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 467147085}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &467147083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,6 +1181,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467147079}
   m_CullTransparentMesh: 1
+--- !u!114 &467147085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467147079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0e611406cba5845bcf0760052f1cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &472461433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7906505488587135780, guid: 83ab75cccc3a9514f84052f894e6313b, type: 3}
@@ -1766,6 +1796,7 @@ GameObject:
   - component: {fileID: 892874323}
   - component: {fileID: 892874322}
   - component: {fileID: 892874321}
+  - component: {fileID: 892874325}
   m_Layer: 5
   m_Name: finalButton
   m_TagString: Untagged
@@ -1790,8 +1821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 112.4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.00001967, y: 149.3281}
+  m_SizeDelta: {x: 249.7316, y: 46.8246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892874321
 MonoBehaviour:
@@ -1861,6 +1892,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 892874325}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &892874323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,6 +1942,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892874319}
   m_CullTransparentMesh: 1
+--- !u!114 &892874325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892874319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0e611406cba5845bcf0760052f1cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &907025900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1597569007453801105, guid: 336597fe0181e9947b6bff43af99ca4b, type: 3}
@@ -2088,10 +2143,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2193,7 +2248,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -2224,11 +2279,9 @@ MonoBehaviour:
     names:
     - Scorpius
     - Orion
-    - Scorpius
     sentences:
-    - NOOO
-    - YES
-    - Deadge
+    - I... I don't understand... I was blessed by Apollo. How could I lose...?
+    - It seems as though you were just another prey to be hunted. Goodbye Scorpius.
   healthBar: {fileID: 0}
   finalbutton: {fileID: 892874319}
 --- !u!212 &1078261222
@@ -2728,10 +2781,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2945,7 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3050,7 +3103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3394,10 +3447,13 @@ MonoBehaviour:
     - Orion
     - Scorpius
     - Orion
+    - Scorpius
     sentences:
-    - Greetings! This is the first sentence.
-    - Well Met! Second Sentence.
-    - Goodbye! Third Sentence.
+    - Scorpius... so it is you that stands in my way.
+    - Yes, although I was keen on hiding away during this time. Apollo has come to
+      me asking for a favor. And having a God in one's favor is always beneficial.
+    - You can not stop me. I will reach Artemis one way or another.
+    - So be it then, I shall devour you whole.
 --- !u!4 &1830242665
 Transform:
   m_ObjectHideFlags: 0

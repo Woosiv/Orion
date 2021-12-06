@@ -36,7 +36,7 @@ public class ScorpiusBehavior : MonoBehaviour
         if (currHealth == 0) {
             Debug.Log(currHealth);
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-            //bossForm.SetActive(true);
+            bossForm.SetActive(true);
             Destroy(gameObject);
         }
         // if (attack && currBullet == null)
@@ -54,7 +54,7 @@ public class ScorpiusBehavior : MonoBehaviour
             int move = Random.Range(0, 1);
             switch (move) {
                 case 0:
-                    yield return ClawAttack(.15f);
+                    yield return ClawAttack(.25f);
                     break;
             }
             yield return new WaitForSeconds(5f);
@@ -70,7 +70,7 @@ public class ScorpiusBehavior : MonoBehaviour
             GameObject temp;
             Vector2 dir = Vector2.right;
             temp = Instantiate(bullet, transform.position, Quaternion.identity);
-            dir = Vector2.down + (Random.Range(0f, .4f)*Vector2.right);
+            dir = Vector2.down + (Random.Range(-.4f, .4f)*Vector2.right);
             temp.GetComponent<Ball>().rb.velocity = dir;
             yield return new WaitForSeconds(seconds);
         }
