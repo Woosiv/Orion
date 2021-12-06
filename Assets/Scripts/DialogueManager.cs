@@ -61,13 +61,11 @@ public Animator animator;
             nameText.text=namesen[0];
             enemyName.text="";
             dialogueBox.GetComponent<Image>().sprite= playerBox;
-            nameText.transform.position = new Vector3(103f,83.2f,0.3f);
         }
         else {
             enemyName.text=namesen[0];
             nameText.text="";
             dialogueBox.GetComponent<Image>().sprite= enemyBox;
-            nameText.transform.position = new Vector3(520f,83.2f,0.3f);
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(namesen[1]));
