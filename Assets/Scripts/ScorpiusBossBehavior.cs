@@ -12,16 +12,22 @@ public class ScorpiusBossBehavior : MonoBehaviour
     private System.Action[] test;
     public int maxHealth;
     public int currHealth;
+    public GameObject healthBar;
     void Start()
     {
         transform.position = new Vector3(0f, 2f, -1f);
         self.velocity = new Vector2(-1f, .5f).normalized * 3f;
-        currHealth = 10;
+        currHealth = 30;
+        healthBar = GameObject.FindGameObjectsWithTag("EnemyHealth")[0];
+        healthBar.GetComponent<healthBar>().currHealth = currHealth;
+        healthBar.GetComponent<healthBar>().setUp();
         StartCoroutine(AttackPatterns());
         
     }
 
     void FixedUpdate() {
+        if (currHealth <= 0) 
+            Destroy(gameObject);
         if (Mathf.Round(self.velocity.y) == 0) {
             self.velocity = new Vector2(self.velocity.x, 1f);
         }
@@ -52,7 +58,7 @@ public class ScorpiusBossBehavior : MonoBehaviour
     }
 
     IEnumerator ClawAttack(float seconds) {
-        Debug.Log("Starting Beam Attack");
+        Debug.Log("Starting Claw Attack");
         int claw = Random.Range(0, 2);
         velocity /= 2;
         for (int i = 0; i < 7; i++) {
@@ -104,5 +110,19 @@ public class ScorpiusBossBehavior : MonoBehaviour
         }
         velocity = 3f;
         self.velocity = reference;
+    }
+
+    void takeDamage(int damage) {
+        currHealth -= damage;
+        healthBar.GetComponent<healthBar>().takeDamage(damage);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log(Physics.GetIgnoreLayerCollision(9,10));
+        if (collision.gameObject.tag == "Projectile") {
+            Debug.Log("Hello?");
+            takeDamage(1);
+            Destroy(collision.gameObject);
+        }
     }
 }
